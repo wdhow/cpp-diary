@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <memory>
 
 void body();
 
@@ -8,7 +7,6 @@ void body();
 class Obj {
 public:
   Obj(int i) 
-  : ip{new int{2}}
   {
     for (int j=0; j<10000; j++)
     {
@@ -22,7 +20,6 @@ public:
   Obj(Obj && a) noexcept = default;
 private:
   double x[10000];
-  std::unique_ptr<int> ip;
 };
 
 int main()
